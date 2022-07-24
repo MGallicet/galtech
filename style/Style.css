@@ -323,3 +323,70 @@ textarea{
    padding: 5px;
    border-radius: 20px;
 }
+/*ANIMACIONES*/
+.inicio{
+   width: 140px;
+   height: 70px;
+   border-radius: 8px;
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+
+.produ{
+   width: 140px;
+   height: 70px;
+   border-radius: 8px;
+   margin-left: auto;
+   margin-right: auto;
+ 
+   
+}
+.servicios{
+   width: 140px;
+   height: 70px;
+   border-radius: 8px;
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+.nosotros{
+   width: 140px;
+   height: 70px;
+   border-radius: 8px;
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+.contacto{
+   width: 140px;
+   height: 70px;
+   border-radius: 8px;
+   margin-left: auto;
+   margin-right: auto;
+   
+   
+}
+.inicio:hover{
+   transform: scale(1.2);
+   background-color:rgb(201, 140, 65) ;
+}
+.produ:hover{
+   transform: scale(1.2);
+   background-color:rgb(201, 140, 65) ;
+}
+.servicios:hover{
+   transform: scale(1.2);
+   background-color:rgb(201, 140, 65) ;
+}
+.nosotros:hover{
+   transform: scale(1.2);
+   background-color:rgb(201, 140, 65) ;
+}
+.contacto:hover{
+   transform: scale(1.2);
+   background-color:rgb(201, 140, 65) ;
+}
