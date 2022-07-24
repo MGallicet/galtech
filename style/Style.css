@@ -9,8 +9,8 @@
 header{
    grid-area: header;
    background-color: black;
-   position: sticky;
-   top: 0px;
+   /*position: sticky;
+   top: 0px;*/
    
 
 }
@@ -83,15 +83,16 @@ h1{
  nav{
    grid-area: nav;
    /*width: 500px;*/
-   padding: 0.5em;
-   border: 2em solid black;
+   /*padding: 0.5em;
+   border: 2em solid black;*/
  }
  
 
  .video{
    
    grid-area: video;
-   text-align:center;
+   
+   /*text-align:center;
    padding: 5em;
    /*border-top: 5px solid black;
    background-color:rgb(100, 60, 11);
@@ -109,13 +110,7 @@ h1{
    height: 350px;
 }
 
- .categoias{
-   grid-area: categorias;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-
- }
+ 
  a{
    text-decoration: none;
    text-align: justify;
@@ -123,6 +118,7 @@ h1{
 
 
  .sonido{
+   grid-area: sonido;
    height: 100px;
    background-color: rgb(100, 60, 11);
    border: 5px solid black;
@@ -133,23 +129,40 @@ h1{
 
  }
  .insumos{
+   grid-area: insumos;
    height: 100px;
    background-color: rgb(100, 60, 11);
    border: 5px solid black;
    border-radius: 40px;
  }
 .notebook{
+   grid-area: note;
    height: 100px;
    background-color: rgb(100, 60, 11);
    border: 5px solid black;
    border-radius: 40px;
 }
 .impresoras{
+   grid-area: imp;
    height: 100px;
    background-color: rgb(100, 60, 11);
    border: 5px solid black;
    border-radius: 40px;
 }
+.categoias{
+   display: grid;
+   grid-template-areas:
+   "insumos "
+   "note  "
+   "imp"
+   "audio";
+   grid-template-rows: 50% 50%;
+   grid-template-columns: 50% 50%;
+   /*display: flex;
+   flex-direction: column;
+   justify-content: center;*/
+
+ }
 
 .telefono{
    height: 3em;
@@ -184,26 +197,22 @@ h1{
    display: flex;
    flex-direction: row;
    background-color: rgb(100, 60, 11);
-   padding: 3em;
-   border: 2em solid rgb(100, 60, 11);
+   padding: 1em;
+   margin-left: 11%;
+   margin-right: 11%;
+   
    border-bottom: 0px;
-   border-radius: 10em;
+   border-radius: 5em;
    margin-top: 5em;
+   justify-content: center;
 
 }
 
 .envoltura{
    display: grid;
-   grid-template-areas: 
-   "header"
-   "nav"
-   "video"
-   "categorias"
-   "pie";
-   
-   
-   
 }
+
+
 
 /*@media (min-width:500px){
    .envoltura{
@@ -216,38 +225,76 @@ h1{
    }
 }*/
 @media (min-width:768px){
+   .categorias{
+      grid-area: categorias;
+      /*display: flex;*/
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .productos{
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+   }
    .envoltura{
       grid-template-areas: 
       "header header"
-      "video"
-      
-      "categorias pie";
+      "nav video"
+      "categorias categorias"
+      "pie pie";
+      grid-template-rows: 25% 55% auto 10% ;
+      grid-template-columns: 25% 75%;
+   }
+   ul{
+      text-align-last: center;
+       word-spacing: 10px;
+      }
+   nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 75px;
+      /*padding: 1em;
+      background-color: rgb(100, 60, 11);*/
    }
    .video{
+      margin-left: 7em;
+      margin-right: auto;
+   }
+   
+   
+   /*.video{
       
    
          grid-area: video;
          text-align:center;
-         padding: 5em;
-         border-top: 5px solid black;
+         padding: 3em;
+         background-color:rgb(100, 60, 11);
+         width: 525px;
+         height: 400px;
+         margin-left: auto;
+         margin-right: auto;
+         border: 5px solid black;
+         border-radius: 90px;
+         /*border-top: 5px solid black;
          background-color:rgb(100, 60, 11);
          padding: 3em;
          border-left: 8em solid black;
          border-right: 8em solid black;
          border-top: 1em solid black;
          border-bottom: 0px solid black;
-         border-radius: 14em;
+         border-radius: 14em;*/
        
    }
    .face{
       width: 500px;
-      height: 500px;
+      height: 375px;
    }
    .logo{
       width: 400px;
       height: 140px;
    }
-}
+
 
 
 .formulario{
