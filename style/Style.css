@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Stick+No+Bills:wght@800&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    background-color: black;
+}
+
+header{
+   grid-area: header;
+   background-color: black;
+   position: sticky;
+   top: 0px;
+   
+
+}
+a{
+   font-weight: bold;
+   color:rgb(100, 60, 11);
+   
+
+}
+.redes{
+   background-color: aliceblue;
+   padding: 20px;
+   height: 50px;
+}
+
+h1{
+   font-family: 'Libre Franklin', sans-serif;
+    font-size: 55px;
+    width: 100%;
+    padding: 20px;
+    text-align-last: center;
+    color: rgb(100, 60, 11);
+    background-color: black;
+    
+ }
+ h2{
+   font-family: 'Libre Franklin', sans-serif;
+   text-align-last: center;
+   padding: 20px;
+   color: rgb(40 34 26);
+ }
+ h3{
+   color: rgb(40 34 26);
+ }
+
+ h4{
+   font-family: 'Libre Franklin', sans-serif;
+   background-color: rgb(100, 60, 11);
+   color: black;
+ }
+
+ .cabeza{
+   width: 100%;
+ }
+ .logo{
+    display: block;
+    margin: 0px auto;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 90px;
+    background-color: black;
+    width: 300px;
+    
+    
+    
+ }
+ ul{
+   text-align-last: center;
+    word-spacing: 10px;
+
+
+ }
+
+ ul li{
+    list-style-type: none;
+    display: inline-block;
+    word-spacing: 0px;
+    
+ }
+ nav{
+   grid-area: nav;
+   /*width: 500px;*/
+   padding: 0.5em;
+   border: 2em solid black;
+ }
+ 
+
+ .video{
+   
+   grid-area: video;
+   text-align:center;
+   padding: 5em;
+   /*border-top: 5px solid black;
+   background-color:rgb(100, 60, 11);
+   padding: 3em;
+   border-left: 8em solid black;
+   border-right: 8em solid black;
+   border-top: 1em solid black;
+   border-bottom: 0px solid black;
+   border-radius: 14em;*/
+ }
+
+
+.face{
+   width: 350px;
+   height: 350px;
+}
+
+ .categoias{
+   grid-area: categorias;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+
+ }
+ a{
+   text-decoration: none;
+   text-align: justify;
+ }
+
+
+ .sonido{
+   height: 100px;
+   background-color: rgb(100, 60, 11);
+   border: 5px solid black;
+   border-radius: 40px;
+   text-align: center;
+   
+  
+
+ }
+ .insumos{
+   height: 100px;
+   background-color: rgb(100, 60, 11);
+   border: 5px solid black;
+   border-radius: 40px;
+ }
+.notebook{
+   height: 100px;
+   background-color: rgb(100, 60, 11);
+   border: 5px solid black;
+   border-radius: 40px;
+}
+.impresoras{
+   height: 100px;
+   background-color: rgb(100, 60, 11);
+   border: 5px solid black;
+   border-radius: 40px;
+}
+
+.telefono{
+   height: 3em;
+   background-color: rgb(100, 60, 11) ;
+   border: 1em solid black;
+   border-radius: 10em;
+
+}
+.direccion{
+   height: 3em;
+   background-color: rgb(100, 60, 11) ;
+   border: 1em solid black;
+   border-radius: 10em;
+
+}
+.mail{
+   height: 3em;
+   background-color: rgb(100, 60, 11) ;
+   border: 1em solid black;
+   border-radius: 10em;
+
+}
+.wathsapp{
+   height: 3em;
+   background-color: rgb(100, 60, 11) ;
+   border: 1em solid black;
+   border-radius: 10em;
+
+}
+.pie{
+   grid-area: pie;
+   display: flex;
+   flex-direction: row;
+   background-color: rgb(100, 60, 11);
+   padding: 3em;
+   border: 2em solid rgb(100, 60, 11);
+   border-bottom: 0px;
+   border-radius: 10em;
+   margin-top: 5em;
+
+}
+
+.envoltura{
+   display: grid;
+   grid-template-areas: 
+   "header"
+   "nav"
+   "video"
+   "categorias"
+   "pie";
+   
+   
+   
+}
+
+/*@media (min-width:500px){
+   .envoltura{
+      grid-template-areas: 
+      "header header"
+      "video video"
+      "categorias  categorias"
+      "pie pie";
+      
+   }
+}*/
+@media (min-width:768px){
+   .envoltura{
+      grid-template-areas: 
+      "header header"
+      "video"
+      
+      "categorias pie";
+   }
+   .video{
+      
+   
+         grid-area: video;
+         text-align:center;
+         padding: 5em;
+         border-top: 5px solid black;
+         background-color:rgb(100, 60, 11);
+         padding: 3em;
+         border-left: 8em solid black;
+         border-right: 8em solid black;
+         border-top: 1em solid black;
+         border-bottom: 0px solid black;
+         border-radius: 14em;
+       
+   }
+   .face{
+      width: 500px;
+      height: 500px;
+   }
+   .logo{
+      width: 400px;
+      height: 140px;
+   }
+}
+
+
+.formulario{
+   padding: 20px;
+   border: 20px;
+}
+
+label{
+   background-color: rgb(100, 60, 11);
+   padding: 5px;
+   border-radius: 20px;
+}
+input{
+   background-color: white;
+}
+textarea{
+   background-color: white;
+}
+.enviar{
+   background-color: rgb(100, 60, 11);
+   padding: 5px;
+   border-radius: 20px;
+}
+.borrar{
+   background-color: rgb(100, 60, 11);
+   padding: 5px;
+   border-radius: 20px;
+}
