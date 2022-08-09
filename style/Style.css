@@ -3,16 +3,32 @@
 *{
     padding: 0%;
     margin: 0%;
-    background-color: black;
+    
 }
+.fondo{
+   background-color:black;
+   color: aliceblue;
+}
+.nav-link{
+   color: rgb(100, 60, 11);
+}
+a{
+   color: rgb(100, 60, 11);
+}
+
+
 
 header{
    grid-area: header;
-   background-color: black;
+   background-color: rgb(100, 60, 11);
    /*position: sticky;
    top: 0px;*/
    
 
+}
+.navbar-nav{
+   font-weight: bold;
+   color:rgb(100, 60, 11);
 }
 a{
    font-weight: bold;
@@ -55,38 +71,9 @@ h1{
  .cabeza{
    width: 100%;
  }
- .logo{
-    display: block;
-    margin: 0px auto;
-    padding-left: 20%;
-    padding-right: 20%;
-    height: 90px;
-    background-color: black;
-    width: 300px;
-    
-    
-    
- }
- ul{
-   text-align-last: center;
-    word-spacing: 10px;
-
-
- }
-
- ul li{
-    list-style-type: none;
-    display: inline-block;
-    word-spacing: 0px;
-    
- }
- nav{
-   grid-area: nav;
-   /*width: 500px;*/
-   /*padding: 0.5em;
-   border: 2em solid black;*/
- }
  
+
+
 
  .video{
    
@@ -208,84 +195,24 @@ h1{
 
 }
 
-.envoltura{
-   display: grid;
-}
 
 
 
-/*@media (min-width:500px){
-   .envoltura{
-      grid-template-areas: 
-      "header header"
-      "video video"
-      "categorias  categorias"
-      "pie pie";
-      
-   }
-}*/
-@media (min-width:768px){
-   .categorias{
-      grid-area: categorias;
-      /*display: flex;*/
-      margin-left: auto;
-      margin-right: auto;
-   }
-   .productos{
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-   }
-   .envoltura{
-      grid-template-areas: 
-      "header header"
-      "nav video"
-      "categorias categorias"
-      "pie pie";
-      grid-template-rows: 25% 55% auto 10% ;
-      grid-template-columns: 25% 75%;
-   }
-   ul{
-      text-align-last: center;
-       word-spacing: 10px;
-      }
-   nav ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 75px;
-      /*padding: 1em;
-      background-color: rgb(100, 60, 11);*/
-   }
+
+
+
+   
+   
+   
    .video{
       margin-left: 7em;
       margin-right: auto;
    }
    
    
-   /*.video{
-      
    
-         grid-area: video;
-         text-align:center;
-         padding: 3em;
-         background-color:rgb(100, 60, 11);
-         width: 525px;
-         height: 400px;
-         margin-left: auto;
-         margin-right: auto;
-         border: 5px solid black;
-         border-radius: 90px;
-         /*border-top: 5px solid black;
-         background-color:rgb(100, 60, 11);
-         padding: 3em;
-         border-left: 8em solid black;
-         border-right: 8em solid black;
-         border-top: 1em solid black;
-         border-bottom: 0px solid black;
-         border-radius: 14em;*/
        
-   }
+   
    .face{
       width: 500px;
       height: 375px;
