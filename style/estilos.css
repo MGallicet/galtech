@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Stick+No+Bills:wght@800&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  background-color: black;
+}
+
+header {
+  grid-area: header;
+  background-color: rgb(100, 60, 11);
+}
+
+a {
+  color: rgb(100, 60, 11);
+}
+
+.nav-link {
+  color: rgb(100, 60, 11);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 30px;
+  width: 100%;
+  padding: 20px;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  color: rgb(100, 60, 11);
+  background-color: black;
+}
+
+h4 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: small;
+  font-weight: bold;
+  background-color: rgb(100, 60, 11);
+  color: black;
+}
+
+label {
+  background-color: rgb(100, 60, 11);
+  padding: 5px;
+  border-radius: 20px;
+}
+
+input {
+  background-color: white;
+}
+
+textarea {
+  background-color: white;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.video {
+  grid-area: video;
+  width: auto;
+  background-color: black;
+  padding: 2em;
+  margin: auto;
+}
+
+.parrafo {
+  grid-area: parrafo;
+  margin: auto;
+  width: auto;
+  color: rgb(100, 60, 11);
+}
+
+.sonido {
+  background-color: rgb(100, 60, 11);
+}
+
+.insumos {
+  background-color: rgb(100, 60, 11);
+}
+
+.notebook {
+  background-color: rgb(100, 60, 11);
+}
+
+.impresoras {
+  background-color: rgb(100, 60, 11);
+}
+
+.propcat, .impresoras, .notebook, .insumos, .sonido {
+  height: 100px;
+  border: 5px solid black;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.sonido {
+  grid-area: sonido;
+}
+
+.insumos {
+  grid-area: insumos;
+}
+
+.notebook {
+  grid-area: note;
+}
+
+.impresoras {
+  grid-area: imp;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+}
+
+.formulario {
+  width: 500px;
+  padding: 20px;
+  border: 20px;
+}
+
+.enviar {
+  background-color: rgb(100, 60, 11);
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.borrar {
+  background-color: rgb(100, 60, 11);
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.datos {
+  height: 4em;
+  background-color: rgb(100, 60, 11);
+  border: 1em solid black;
+  border-radius: 10em;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  gap: 25px;
+}
+
+.gal {
+  padding: 0.5em;
+  background-color: rgb(100, 60, 11);
+}
+
+@media (max-width: 768px) {
+  .tel {
+    display: none;
+  }
+  .direccion {
+    display: none;
+  }
+  .mail {
+    display: none;
+  }
+  h4 {
+    display: none;
+  }
+  .navbar-brand {
+    display: none;
+  }
+}
+.productos {
+  display: grid;
+  grid-template-areas: "sonido  insumos" "note  imp";
+}
+
+.pie {
+  grid-area: pie;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(100, 60, 11);
+  border-top: 2em solid black;
+  justify-content: center;
+}
+
+.nosotros {
+  display: grid;
+  padding: 1em;
+  margin: auto;
+  grid-template-areas: "video" "parrafo";
+}
+
+@media (min-width: 768px) {
+  .productos {
+    display: grid;
+    grid-template-areas: "sonido  insumos note  imp";
+  }
+  .video {
+    margin: 0%;
+    width: 530px;
+  }
+  .parrafo {
+    width: 20em;
+  }
+  .nosotros {
+    display: grid;
+    /*width: auto;
+    height: auto;*/
+    padding: 1em;
+    margin: auto;
+    grid-template-areas: "video parrafo";
+  }
+  .galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    gap: 25px;
+  }
+}/*# sourceMappingURL=estilos.css.map */

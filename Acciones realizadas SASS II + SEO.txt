@@ -1,0 +1,19 @@
+Cambios realizados -- SEO+SASS II
+
+-Agregue metas descriptions, copiright y autor en todos los html.
+
+-Corrobore que todos los html tengan su titulo, aguregué etiqueta de titulo en galeria de productos.
+
+-Aplique SASS I al proyecto.
+
+-Aplique mapeo para aplicar background-color a iconos de "categorias".
+
+-Aplique extend para dotar de ciertas propiedades a iconos de "categorias".
+
+-Aplique mixin para dotar de propiedades a iconos del footer.
+
+-Genere una galeria de productos, para ello redimensioné las imagenes con iloveimg, y las comprimí con dicha herramienta.
+
+-Para las fotos de la galeria utilicé tipo de carga "lazy".
+
+-Complete todos los "alt" de las mismas. 

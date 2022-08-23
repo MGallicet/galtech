@@ -1,0 +1,114 @@
+@import "fuentes";
+@import "generales";
+@import "contenido";
+
+.galeria{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr;
+   justify-items: center;
+   gap: 25px;
+}
+.gal{
+   padding: 0.5em;
+   background-color: rgb(100, 60, 11);
+}
+
+
+@media(max-width:768px){
+   .tel{
+      display: none;
+       
+      }
+      .direccion{
+         display: none;
+         
+
+      }
+      .mail{
+         display: none;
+         
+
+      }
+      h4{
+         display: none;
+      
+       }
+       .navbar-brand{
+         display: none;
+       }
+}
+
+
+
+
+.productos{
+   display: grid;
+   grid-template-areas:
+   "sonido  insumos"
+   "note  imp";
+   
+ }
+ .pie{
+   grid-area: pie;
+   display: flex;
+   flex-direction: row;
+   background-color: rgb(100, 60, 11);
+   border-top: 2em solid black;
+   justify-content: center;
+
+
+
+}
+
+.nosotros{
+   display: grid;
+   padding: 1em;
+   margin: auto;
+   
+   grid-template-areas: 
+   "video"
+   "parrafo"
+   ;
+}
+
+
+@media (min-width:768px){
+   .productos{
+      display: grid;
+      grid-template-areas:
+      "sonido  insumos note  imp";
+      
+    }
+    .video{
+      margin: 0%;
+      width: 530px;
+    }
+
+    .parrafo{
+      width: 20em;
+      
+    }
+
+    .nosotros{
+      display: grid;
+      /*width: auto;
+      height: auto;*/
+      padding: 1em;
+      margin: auto;
+      grid-template-areas: 
+      "video parrafo";
+    }
+    .galeria{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      justify-items: center;
+      gap: 25px;
+    }
+}
+   
+
+
+
+

@@ -1,0 +1,137 @@
+h1{
+    font-family: 'Libre Franklin', sans-serif;
+     font-size: 30px;
+     width: 100%;
+     padding: 20px;
+     text-align-last: center;
+     color: rgb(100, 60, 11);
+     background-color: black;
+     
+  }
+  
+ 
+ 
+  h4{
+    
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: small;
+    font-weight: bold;
+    background-color: rgb(100, 60, 11);
+    color: black;
+ 
+  }
+
+  label{
+    background-color: rgb(100, 60, 11);
+    padding: 5px;
+    border-radius: 20px;
+ }
+ input{
+    background-color: white;
+ }
+ textarea{
+    background-color: white;
+ }
+
+ .carousel-item{
+    text-align: center;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  .video{
+    grid-area: video;
+    width: auto;
+    background-color: black;
+    padding: 2em;
+    margin: auto;
+    
+  }
+  .parrafo{
+    grid-area: parrafo;
+    margin: auto;
+    width:auto;
+    color:rgb(100, 60, 11);
+    
+  }
+
+  $categorias: (
+   sonido: rgb(100, 60, 11),
+   insumos: rgb(100, 60, 11),
+   notebook: rgb(100, 60, 11),
+   impresoras: rgb(100, 60, 11),
+  );
+  @each $cat, $color in $categorias{
+   .#{$cat}{
+      background-color: $color;
+   }
+  }
+
+
+ 
+ .propcat{
+   
+    height: 100px;
+    border: 5px solid black;
+    border-radius: 40px;
+    text-align: center;
+
+ }
+  .sonido{
+   grid-area: sonido;
+   @extend .propcat;
+    
+  }
+  .insumos{
+    grid-area: insumos;
+    @extend .propcat;
+  }
+ .notebook{
+    grid-area: note;
+    @extend .propcat;
+ }
+ .impresoras{
+    grid-area: imp;
+    @extend .propcat;
+ }
+ .productos{
+    display: flex;
+    justify-content: center;
+ 
+ }
+ 
+ .formulario{
+    width: 500px;
+    padding: 20px;
+    border: 20px;
+ }
+
+ 
+ .enviar{
+    background-color: rgb(100, 60, 11);
+    padding: 5px;
+    border-radius: 20px;
+ }
+ .borrar{
+    background-color: rgb(100, 60, 11);
+    padding: 5px;
+    border-radius: 20px;
+ }
+ @mixin pieprop($alto, $color, $borde, $radio) {
+   height: $alto;
+   background-color: $color;
+   border: $borde;
+   border-radius: $radio;
+ }
+ 
+ .datos{
+   @include pieprop(4em,rgb(100, 60, 11) ,1em solid black ,10em );
+    
+ }
+ 
