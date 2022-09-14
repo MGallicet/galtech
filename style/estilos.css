@@ -2,12 +2,17 @@
 * {
   padding: 0%;
   margin: 0%;
-  background-color: black;
+  background-color: rgb(214, 214, 214);
 }
 
 header {
   grid-area: header;
-  background-color: rgb(100, 60, 11);
+}
+.navbar-brand{
+  width: 150px;
+}
+.collapse{
+  padding-left: 17em;
 }
 
 a {
@@ -18,34 +23,42 @@ a {
   color: rgb(100, 60, 11);
 }
 
-.nav {
-  display: flex;
-  justify-content: center;
-}
 
 h1 {
   font-family: "Libre Franklin", sans-serif;
+  font-weight: bolder;
   font-size: 30px;
   width: 100%;
-  padding: 20px;
-  -moz-text-align-last: center;
-       text-align-last: center;
+  padding: 3px;
+  text-align-last: center;
   color: rgb(100, 60, 11);
-  background-color: black;
+  background-color: rgb(158, 158, 158);
 }
+h2{
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
 
 h4 {
   font-family: "Libre Franklin", sans-serif;
   font-size: small;
   font-weight: bold;
-  background-color: rgb(100, 60, 11);
-  color: black;
+  color: rgb(100, 60, 11);
+  text-align: center;
 }
 
+
+
 label {
-  background-color: rgb(100, 60, 11);
+  background-color: rgb(158, 158, 158);
   padding: 5px;
   border-radius: 20px;
+}
+
+.btn{
+  background-color: rgb(100, 60, 11);
 }
 
 input {
@@ -56,9 +69,32 @@ textarea {
   background-color: white;
 }
 
-.carousel-item {
+.carousel {
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  
+  
 }
+body{
+
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5em;
+  background-color: rgb(214, 214, 214);
+}
+
+.pie {
+  grid-area: pie;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
 
 .video {
   grid-area: video;
@@ -75,48 +111,71 @@ textarea {
   color: rgb(100, 60, 11);
 }
 
-.sonido {
-  background-color: rgb(100, 60, 11);
+
+.imagenServicioTecnico{
+  grid-area: imgst;
+  padding: 2em;
+  
+}
+.pservicioTecnico{
+  grid-area: pst;
+  color: rgb(100, 60, 11) ;
+  padding: 2em;
+  width: 30em;
+}
+.imagenCamaras{
+  grid-area: imgcam;
+  padding: 2em;
+}
+.pcamaras{
+  grid-area: pcam;
+  color: rgb(100, 60, 11) ;
+  width: 20em;
+  padding: 2em;
+}
+.imagenInsumos{
+  grid-area: imginsumos;
+  padding: 2em;
+
+}
+.pinsumos{
+  grid-area: pinsumos;
+  color: rgb(100, 60, 11) ;
+  width: 20em;
+  padding: 2em;
 }
 
-.insumos {
-  background-color: rgb(100, 60, 11);
-}
-
-.notebook {
-  background-color: rgb(100, 60, 11);
-}
-
-.impresoras {
-  background-color: rgb(100, 60, 11);
-}
-
-.propcat, .impresoras, .notebook, .insumos, .sonido {
-  height: 100px;
-  border: 5px solid black;
-  border-radius: 40px;
+.categoria{
+  height: 50px;
+  
+  
   text-align: center;
 }
 
 .sonido {
   grid-area: sonido;
+  padding: 20px;
 }
 
 .insumos {
   grid-area: insumos;
+  padding: 20px;
 }
 
 .notebook {
   grid-area: note;
+  padding: 20px;
 }
 
 .impresoras {
   grid-area: imp;
+  padding: 20px;
 }
 
 .productos {
   display: flex;
   justify-content: center;
+ 
 }
 
 .formulario {
@@ -138,10 +197,14 @@ textarea {
 }
 
 .datos {
-  height: 4em;
-  background-color: rgb(100, 60, 11);
-  border: 1em solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+.imagen, .imagencat{
+  height: 3em;
   border-radius: 10em;
+
 }
 
 .galeria {
@@ -153,12 +216,12 @@ textarea {
 }
 
 .gal {
-  padding: 0.5em;
+  padding: 5px;
   background-color: rgb(100, 60, 11);
 }
 
 @media (max-width: 768px) {
-  .tel {
+  .tel{
     display: none;
   }
   .direccion {
@@ -173,20 +236,16 @@ textarea {
   .navbar-brand {
     display: none;
   }
+  .parrafos {
+    display: none;
+  }
 }
 .productos {
   display: grid;
   grid-template-areas: "sonido  insumos" "note  imp";
 }
 
-.pie {
-  grid-area: pie;
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(100, 60, 11);
-  border-top: 2em solid black;
-  justify-content: center;
-}
+
 
 .nosotros {
   display: grid;
@@ -194,8 +253,44 @@ textarea {
   margin: auto;
   grid-template-areas: "video" "parrafo";
 }
+.pservicioTecnico2{
+  grid-area: ps2;
+}
+.pcamaras2{
+  grid-area: pcam2;
+}
+.pinsumos2{
+  grid-area: pinsumos2;
+}
+
+.stecnico{
+  padding: 2em;
+  display: grid;
+  align-items: stretch;
+  justify-items: center;
+  grid-column: 1fr;
+  grid-template-areas: 
+  "ps2"
+  "imgst"
+  "pcam2"
+  "imgcam"
+  "pinsumos2"
+  "imginsumos" ;
+}
 
 @media (min-width: 768px) {
+  .stecnico{
+    padding: 2em;
+    display: grid;
+    align-items: stretch;
+    justify-items: center;
+    grid-column: 1fr 1fr;
+    grid-template-areas: 
+    "imgst pst"
+    "pcam imgcam"
+    "imginsumos pinsumos" ;
+  }
+  
   .productos {
     display: grid;
     grid-template-areas: "sonido  insumos note  imp";
@@ -222,4 +317,17 @@ textarea {
     justify-items: center;
     gap: 25px;
   }
+  .pservicioTecnico2, .pcamaras2, .pinsumos2{
+    display: none;
+  }
+
 }/*# sourceMappingURL=estilos.css.map */
+/*animaciones*/
+.nav-link:hover{
+  transform: scale(1.2);
+  background-color:rgb(158, 158, 158);
+}
+.imagencat:hover{
+  transform: scale(1.2);
+  background-color:rgb(100, 60, 11);
+}
