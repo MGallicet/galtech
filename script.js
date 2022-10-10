@@ -19,26 +19,49 @@ function calculoStock(compra, stock, precio){
         alert("Actualmente contamos con" + stock + "del producto seleccionado")
     }
 }
+function compra(nombre){
 
-let baseLaptop = new producto("base",5000,30)
-let laptopLenovo = new producto("laptopLenovo",85000,15)
-let laptopGamer = new producto("laptopGamer",101000,30)
-let monitorCX = new producto("monitorCX",30000,45)
-let mouseGamer = new producto("mouseGamer",2000,100)
-let torreSonido = new producto("torreSonido",20000,10)
-let parlantePortatil = new producto("parlantePortatil",9500,25)
-let tecladoCX = new producto("tecladoCX",2500,20)
-let comboNisuta = new producto("comboNisuta",4500,30)
-let wifiNisuta = new producto("wifiNisuta",5000,30)
+}
 
-alert("Estos son nuestros productos: \n - Base para laptop \n - Laptop Lenovo \n - Laptop Gamer \n - Monitor CX \n - Mouse Gamer CX \n - Torre de sonído \n - Parlante portatil \n - Teclado CX \n - Combo Nisuta \n - Antena Wifi")
+let baseLaptop = new producto("BASE LAPTOP",5000,30)
+let laptopLenovo = new producto("LAPTOP LENOVO",85000,15)
+let laptopGamer = new producto("LAPTOP GAMER",101000,30)
+let monitorCX = new producto("MONITOR CX",30000,45)
+let mouseGamer = new producto("MOUSE GAMER CX",2000,100)
+let torreSonido = new producto("TORRE DE SONIDO",20000,10)
+let parlantePortatil = new producto("PARLANTE PORTATIL",9500,25)
+let tecladoCX = new producto("TECLADO CX",2500,20)
+let comboNisuta = new producto("COMBO NISUTA",4500,30)
+let wifiNisuta = new producto("ANTENA WIFI",5000,0)
+
+let listaProductos = [baseLaptop, laptopLenovo, laptopGamer, monitorCX, mouseGamer, torreSonido, parlantePortatil, tecladoCX, comboNisuta, wifiNisuta]
+let nombreProd = []
+
+for(const producto of listaProductos){
+    if(producto.stock > 0){
+    nombreProd.push(producto.nombre)
+    }
+}
+
+alert("Estos son nuestros productos: \n" +  nombreProd.join(" \n"))
 
 
 let fin = ""
 while(fin != "no"){
-    let compra = prompt("Que producto desea adquirir \n - Base para laptop \n - Laptop Lenovo \n - Laptop Gamer \n - Monitor CX \n - Mouse Gamer CX \n - Torre de sonído \n - Parlante portatil \n - Teclado CX \n - Combo Nisuta \n - Antena Wifi")
-    alert(compra.toUpperCase())
-    if(compra.toUpperCase() == "BASE PARA LAPTOP"){
+
+
+    let compra = prompt("Que producto desea adquirir \n -" + nombreProd.join("\n -"))
+
+
+    //REEMPLAZO LOS IF//
+
+    
+    let resultado = listaProductos.find((el) => el.nombre === compra.toUpperCase())
+    let cantidad = prompt("ingrese que cantidad de " + resultado.nombre + " desea comprar:")
+    calculoStock(cantidad, resultado.stock, resultado.precio)
+
+    
+    /*if(compra.toUpperCase() == "BASE PARA LAPTOP"){
         let cantidadBase = prompt("ingrese que cantidad de " + baseLaptop.nombre + " desea comprar:")
         calculoStock(cantidadBase, baseLaptop.stock, baseLaptop.precio)
         
@@ -87,7 +110,7 @@ while(fin != "no"){
         let cantidadAntena = prompt("ingrese que cantidad de " + wifiNisuta.nombre + " desea comprar:")
         calculoStock(cantidadAntena, wifiNisuta.stock, wifiNisuta.precio)
         
-    }
+    }*/
 
 
 
