@@ -209,8 +209,7 @@ body{
 
 .galeria {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   gap: 25px;
 }
@@ -218,6 +217,7 @@ body{
 .gal {
   padding: 5px;
   background-color: rgb(100, 60, 11);
+ 
 }
 
 @media (max-width: 768px) {
@@ -310,12 +310,21 @@ body{
     margin: auto;
     grid-template-areas: "video parrafo";
   }
-  .galeria {
+  .carrito{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    
+  }
+  .galeria{
+    display: grid;
+    column-gap: 10em;
+  }
+  #cuerpo {
+    display: grid;
+    grid-template-columns: 4fr 0.5fr;
+    grid-template-areas: "galeria carrito";
     justify-items: center;
     gap: 25px;
+    
   }
   .pservicioTecnico2, .pcamaras2, .pinsumos2{
     display: none;
