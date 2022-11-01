@@ -317,10 +317,11 @@ body{
   .galeria{
     display: grid;
     column-gap: 10em;
+    
   }
   #cuerpo {
     display: grid;
-    grid-template-columns: 4fr 0.5fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-areas: "galeria carrito";
     justify-items: center;
     gap: 25px;

@@ -1,6 +1,7 @@
 // variables
 
-function producto(nombre,precio,stock,imagen){
+function producto(id,nombre,precio,stock,imagen){
+    this.id = id
     this.nombre = nombre
     this.precio = precio
     this.stock = stock
@@ -24,20 +25,19 @@ function compra(nombre){
 
 }
 
-let baseLaptop = new producto("BASE LAPTOP",5000,30,"../img/productos/base.jpg")
-let laptopLenovo = new producto("LAPTOP LENOVO",85000,15,"../img/productos/laptop.jpg")
-let laptopGamer = new producto("LAPTOP GAMER",101000,30,"../img/productos/laptop2.jpg")
-let monitorCX = new producto("MONITOR CX",30000,45,"../img/productos/monitor.jpg")
-let mouseGamer = new producto("MOUSE GAMER CX",2000,100,"../img/productos/mouse.jpg")
-let torreSonido = new producto("TORRE DE SONIDO",20000,10,"../img/productos/NSPA66B.jpg")
-let parlantePortatil = new producto("PARLANTE PORTATIL",9500,25,"../img/productos/parlante2.jpg")
-let tecladoCX = new producto("TECLADO CX",2500,20,"../img/productos/teclado.jpg")
-let comboNisuta = new producto("COMBO NISUTA",4500,30,"../img/productos/tecladomouse.jpg")
-let wifiNisuta = new producto("ANTENA WIFI",5000,0,"../img/productos/wireless.jpg")
+let baseLaptop = new producto(1,"BASE LAPTOP",5000,30,"../img/productos/base.jpg")
+let laptopLenovo = new producto(2,"LAPTOP LENOVO",85000,15,"../img/productos/laptop.jpg")
+let laptopGamer = new producto(3,"LAPTOP GAMER",101000,30,"../img/productos/laptop2.jpg")
+let monitorCX = new producto(4,"MONITOR CX",30000,45,"../img/productos/monitor.jpg")
+let mouseGamer = new producto(5,"MOUSE GAMER CX",2000,100,"../img/productos/mouse.jpg")
+let torreSonido = new producto(6,"TORRE DE SONIDO",20000,10,"../img/productos/NSPA66B.jpg")
+let parlantePortatil = new producto(7,"PARLANTE PORTATIL",9500,25,"../img/productos/parlante2.jpg")
+let tecladoCX = new producto(8,"TECLADO CX",2500,20,"../img/productos/teclado.jpg")
+let comboNisuta = new producto(9,"COMBO NISUTA",4500,30,"../img/productos/tecladomouse.jpg")
+let wifiNisuta = new producto(10,"ANTENA WIFI",5000,0,"../img/productos/wireless.jpg")
 
 let listaProductos = [baseLaptop, laptopLenovo, laptopGamer, monitorCX, mouseGamer, torreSonido, parlantePortatil, tecladoCX, comboNisuta, wifiNisuta]
 let nombreProd = []
-
 
 
 let lista = document.createElement("a")
@@ -45,6 +45,16 @@ lista.innerHTML = `Carrito de compras`
 carro.append(lista)
 
 let contador = 0
+let arregloID = []
+
+let arregloIDLS = JSON.parse(localStorage.getItem('arregloIDJS'))
+
+if(arregloIDLS !== null){
+    arregloID = arregloIDLS
+    
+    //console.log(arregloID)
+    agregaCarrito()
+}
 
 for(const producto of listaProductos){
     contador += 1
@@ -57,34 +67,74 @@ for(const producto of listaProductos){
     galProductos.append(card)
     let boton = document.getElementById(contador) 
     boton.addEventListener("click", agregaCarrito)
+    
     }
     
 }
 
-let arregloID = []
+
+//localStorage.clear()
+
+
+
 
 function agregaCarrito(boton){
-    let nombreCard = document.getElementById("h"+this.id)
-    render()
+    localStorage.setItem('arregloIDJS', JSON.stringify(arregloID))
+    carro.innerHTML = ""
+    if(this.id != undefined){
     arregloID.push(this.id)
-    let idSinRepe = [...new set(arregloID)]
+    localStorage.setItem('arregloIDJS', JSON.stringify(arregloID))
+    }
+    let idSinRepe = [...new Set(arregloID)]
+    console.log(arregloID)
+    lista.innerHTML = `Carrito de compras`
     
-    arregloSinRepe.forEach((idSinRepe) => {
-        let item = listaProductos.filter((prod) => {return prod.id === idSinRepe})
-        let cant = arregloID.reduce((total,id) => {return id===idSinRepe ? total =+1 : total},0)
+    carro.append(lista)
 
-    }) 
-    let compra = document.createElement("li")
-    compra.id = this.id
-    compra.className = "listaCompra"
-    compra.innerHTML = `${cantidad}X${item[0].nombre} - $${item[0].precio}`
-    carro.append(compra)
-    //let listaCompra = document.getElementsByClassName("listaCompra")
+    guardado(idSinRepe, arregloID)
     
-    
+    let calculo = document.getElementById("valorTotal")
+        calculo.innerHTML = "TOTAL: $" + calculoTotal()
+    //carro.append(calculo)
+    console.log(calculo)
 }
 
 
+
+function guardado(valorSR,valor){
+    valorSR.forEach((idSR) => {
+        let item = listaProductos.filter((prod) => {return prod.id == idSR})
+        let cant = valor.reduce((total,id) => {return id == idSR ? total += 1 : total},0)
+        
+        let compra = document.createElement("li")
+        compra.id = "compra" + idSR
+        compra.className = "listaCompra"
+        compra.innerHTML = `<button id = boton${idSR}> X </button><p id=textoboton${idSR}> ${cant} X ${item[0].nombre} - $${item[0].precio}</p>`
+        carro.append(compra)
+        
+        
+        let eliminar = document.getElementById("boton" + idSR)
+        eliminar.addEventListener("click", eliminarProd)
+    }) 
+    
+    }
+    function eliminarProd(eliminar){
+        console.log(arregloID)
+        arregloID = arregloID.filter((arrid) => {return "boton" + arrid != this.id} )
+        console.log(arregloID)
+        agregaCarrito()
+        
+    }
+    function calculoTotal(){
+        return arregloID.reduce((total, itemId) => {
+            let item = listaProductos.filter((producto) => {
+                return producto.id === parseInt(itemId)
+            })
+    
+            return total + item[0].precio
+        }, 0)
+        console.log(total)
+    }
 
 /*alert("Estos son nuestros productos: \n" +  nombreProd.join(" \n"))
 Swal.fire({
